@@ -1,0 +1,124 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "definedBy": {
+      "@id": "rdfs:isDefinedBy",
+      "@type": "@id"
+    },
+    "order": {
+      "@id": "sh:order",
+      "@type": "xsd:integer"
+    },
+    "quantityKind": {
+      "@id": "qudt:hasQuantityKind",
+      "@type": "@id"
+    },
+    "applicableUnit": {
+      "@id": "qudt:applicableUnit",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "symbol": "qudt:symbol",
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/",
+      "@type": "owl:Ontology",
+      "label": {
+        "en": "Units",
+        "de": "Einheiten"
+      },
+      "comment": {
+        "en": "Units of measure used by the vocabularies of this node; each matches a QUDT unit.",
+        "de": "Maßeinheiten der Vokabulare dieses Knotens; jede entspricht einer QUDT-Einheit."
+      }
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/V",
+      "@type": "qudt:Unit",
+      "label": {
+        "en": "Volt",
+        "de": "Volt"
+      },
+      "comment": {
+        "en": "SI unit of electric potential difference.",
+        "de": "SI-Einheit der elektrischen Spannung."
+      },
+      "symbol": "V",
+      "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/Voltage",
+      "exactMatch": "http://qudt.org/vocab/unit/V",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/KiloV",
+      "@type": "qudt:Unit",
+      "label": {
+        "en": "Kilovolt",
+        "de": "Kilovolt"
+      },
+      "comment": {
+        "en": "1000 volt.",
+        "de": "1000 Volt."
+      },
+      "symbol": "kV",
+      "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/Voltage",
+      "exactMatch": "http://qudt.org/vocab/unit/KiloV",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/A",
+      "@type": "qudt:Unit",
+      "label": {
+        "en": "Ampere",
+        "de": "Ampere"
+      },
+      "comment": {
+        "en": "SI base unit of electric current.",
+        "de": "SI-Basiseinheit der elektrischen Stromstärke."
+      },
+      "symbol": "A",
+      "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/ElectricCurrent",
+      "exactMatch": "http://qudt.org/vocab/unit/A",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/KiloA",
+      "@type": "qudt:Unit",
+      "label": {
+        "en": "Kiloampere",
+        "de": "Kiloampere"
+      },
+      "comment": {
+        "en": "1000 ampere.",
+        "de": "1000 Ampere."
+      },
+      "symbol": "kA",
+      "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/ElectricCurrent",
+      "exactMatch": "http://qudt.org/vocab/unit/KiloA",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
+    }
+  ]
+}

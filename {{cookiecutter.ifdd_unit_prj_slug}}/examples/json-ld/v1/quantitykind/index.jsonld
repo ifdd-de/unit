@@ -1,0 +1,96 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "definedBy": {
+      "@id": "rdfs:isDefinedBy",
+      "@type": "@id"
+    },
+    "order": {
+      "@id": "sh:order",
+      "@type": "xsd:integer"
+    },
+    "quantityKind": {
+      "@id": "qudt:hasQuantityKind",
+      "@type": "@id"
+    },
+    "applicableUnit": {
+      "@id": "qudt:applicableUnit",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "symbol": "qudt:symbol",
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/",
+      "@type": "owl:Ontology",
+      "label": {
+        "en": "Quantity kinds",
+        "de": "Größenarten"
+      },
+      "comment": {
+        "en": "Physical quantities the units measure; each matches a QUDT quantity kind.",
+        "de": "Physikalische Größen, die die Einheiten messen; jede entspricht einer QUDT-Größenart."
+      }
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/Voltage",
+      "@type": "qudt:QuantityKind",
+      "label": {
+        "en": "Voltage",
+        "de": "Elektrische Spannung"
+      },
+      "comment": {
+        "en": "Difference of electric potential between two points.",
+        "de": "Unterschied des elektrischen Potentials zwischen zwei Punkten."
+      },
+      "applicableUnit": [
+        "{{ cookiecutter.ifdd_unit_url }}/unit/V",
+        "{{ cookiecutter.ifdd_unit_url }}/unit/KiloV"
+      ],
+      "exactMatch": "http://qudt.org/vocab/quantitykind/Voltage",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/ElectricCurrent",
+      "@type": "qudt:QuantityKind",
+      "label": {
+        "en": "Electric current",
+        "de": "Elektrische Stromstärke"
+      },
+      "comment": {
+        "en": "Flow of electric charge per time.",
+        "de": "Fluss elektrischer Ladung pro Zeit."
+      },
+      "applicableUnit": [
+        "{{ cookiecutter.ifdd_unit_url }}/unit/A",
+        "{{ cookiecutter.ifdd_unit_url }}/unit/KiloA"
+      ],
+      "exactMatch": "http://qudt.org/vocab/quantitykind/ElectricCurrent",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/"
+    }
+  ]
+}

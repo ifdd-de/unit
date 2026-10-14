@@ -1,0 +1,11 @@
+# Every option away from its default.
+default_context:
+  ifdd_unit_prj_name: "Example Unit"
+  ifdd_unit_prj_slug: "example-unit"
+  ifdd_unit_host: "unit.example.org"
+  ifdd_unit_dev_port: "18083"
+  ifdd_unit_autoindex: "n"
+  ifdd_unit_cors_origin: "https://ui.example.org"
+  ifdd_unit_cache_max_age: "0"
+  ifdd_unit_memory_limit: "64M"
+  ifdd_proxy_network: "edge-net"

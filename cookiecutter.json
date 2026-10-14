@@ -1,0 +1,18 @@
+{
+  "ifdd_unit_prj_name": "IFDD Unit",
+  "ifdd_unit_prj_slug": "{{ cookiecutter.ifdd_unit_prj_name|lower|replace(' ', '_') }}",
+  "ifdd_unit_host": "unit",
+  "ifdd_unit_dev_port": "8083",
+  "ifdd_unit_autoindex": "y",
+  "ifdd_unit_cors_origin": "*",
+  "ifdd_unit_cache_max_age": "300",
+  "ifdd_unit_memory_limit": "128M",
+  "ifdd_unit_content_dir": "./examples/json-ld",
+  "ifdd_unit_url": "http://unit/v1",
+  "ifdd_nginx_image": "nginxinc/nginx-unprivileged:1.30.5-alpine-slim",
+  "ifdd_proxy_network": "proxy-net",
+  "_copy_without_render": [
+    ".github",
+    "tests"
+  ]
+}
