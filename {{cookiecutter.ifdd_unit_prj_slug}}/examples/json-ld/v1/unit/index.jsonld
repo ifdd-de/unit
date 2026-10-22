@@ -119,6 +119,38 @@
       "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/ElectricCurrent",
       "exactMatch": "http://qudt.org/vocab/unit/KiloA",
       "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/DEG_C",
+      "@type": "qudt:Unit",
+      "label": {
+        "en": "Degree Celsius",
+        "de": "Grad Celsius"
+      },
+      "comment": {
+        "en": "Celsius temperature.",
+        "de": "Celsius-Temperatur."
+      },
+      "symbol": "°C",
+      "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/Temperature",
+      "exactMatch": "http://qudt.org/vocab/unit/DEG_C",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/unit/PERCENT_RH",
+      "@type": "qudt:Unit",
+      "label": {
+        "en": "Percent relative humidity",
+        "de": "Prozent relative Feuchte"
+      },
+      "comment": {
+        "en": "Relative humidity in percent.",
+        "de": "Relative Feuchte in Prozent."
+      },
+      "symbol": "%RH",
+      "quantityKind": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/RelativeHumidity",
+      "exactMatch": "http://qudt.org/vocab/unit/PERCENT_RH",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/unit/"
     }
   ]
 }
