@@ -2,6 +2,14 @@
 
 The version scheme follows the other IFDD templates: `YY.MM.N`.
 
+## [Unreleased]
+
+- New example units `DEG_C` (°C) and `PERCENT_RH` (%RH) with the quantity
+  kinds `Temperature` and `RelativeHumidity`, each with `skos:exactMatch` on
+  QUDT; used by the time series example `climate.ops.example.ifdd.de` of the
+  type template. `examples` is on the skip list: existing instances and the
+  content repository take the new units by hand.
+
 ## [26.10.2] - 2026-10-14
 
 - Documentation of the instance in `docs/en` and `docs/de` (Sphinx sources,

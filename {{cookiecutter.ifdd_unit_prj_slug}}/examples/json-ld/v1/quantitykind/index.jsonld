@@ -91,6 +91,40 @@
       ],
       "exactMatch": "http://qudt.org/vocab/quantitykind/ElectricCurrent",
       "definedBy": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/Temperature",
+      "@type": "qudt:QuantityKind",
+      "label": {
+        "en": "Temperature",
+        "de": "Temperatur"
+      },
+      "comment": {
+        "en": "How warm or cold something is.",
+        "de": "Wie warm oder kalt etwas ist."
+      },
+      "applicableUnit": [
+        "{{ cookiecutter.ifdd_unit_url }}/unit/DEG_C"
+      ],
+      "exactMatch": "http://qudt.org/vocab/quantitykind/Temperature",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/"
+    },
+    {
+      "@id": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/RelativeHumidity",
+      "@type": "qudt:QuantityKind",
+      "label": {
+        "en": "Relative humidity",
+        "de": "Relative Feuchte"
+      },
+      "comment": {
+        "en": "Water vapour in the air relative to the most it can hold at that temperature.",
+        "de": "Wasserdampf in der Luft im Verhältnis zum Höchstwert bei dieser Temperatur."
+      },
+      "applicableUnit": [
+        "{{ cookiecutter.ifdd_unit_url }}/unit/PERCENT_RH"
+      ],
+      "exactMatch": "http://qudt.org/vocab/quantitykind/RelativeHumidity",
+      "definedBy": "{{ cookiecutter.ifdd_unit_url }}/quantitykind/"
     }
   ]
 }
