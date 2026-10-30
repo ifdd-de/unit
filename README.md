@@ -33,7 +33,7 @@ the instance (see its README).
 | `ifdd_unit_cors_origin` | `*` | `Access-Control-Allow-Origin`: `*` or one origin |
 | `ifdd_unit_cache_max_age` | `300` | `Cache-Control` max-age in seconds, `0` for `no-cache`; **a starting value, not measured** |
 | `ifdd_unit_memory_limit` | `128M` | memory limit of the container; **a starting value, not measured** |
-| `ifdd_nginx_image` | `nginxinc/nginx-unprivileged:1.30.5-alpine-slim` | nginx image; for a mirror, the image in the internal registry |
+| `ifdd_nginx_image` | `nginxinc/nginx-unprivileged:1.30.6-alpine-slim` | nginx image; for a mirror, the image in the internal registry |
 | `ifdd_proxy_network` | `proxy-net` | Docker network of the proxy |
 | `ifdd_unit_url` | `http://unit/v1` | base URL of the units and quantity kinds; the examples render their IRIs from it (shared) |
 
