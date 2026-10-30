@@ -9,7 +9,7 @@
   "ifdd_unit_memory_limit": "128M",
   "ifdd_unit_content_dir": "./examples/json-ld",
   "ifdd_unit_url": "http://unit/v1",
-  "ifdd_nginx_image": "nginxinc/nginx-unprivileged:1.30.5-alpine-slim",
+  "ifdd_nginx_image": "nginxinc/nginx-unprivileged:1.30.6-alpine-slim",
   "ifdd_proxy_network": "proxy-net",
   "_copy_without_render": [
     ".github",
