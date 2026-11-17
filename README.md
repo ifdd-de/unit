@@ -84,7 +84,8 @@ step.
 
 The pages have no `conf.py` of their own: they are meant to be copied into a
 Sphinx project that documents all services. That project needs `myst_parser`
-and `sphinxcontrib.mermaid`. Labels start with `ifdd-unit-`; references to
+and `sphinxcontrib.plantuml` (PlantUML with Java and Graphviz).
+Labels start with `ifdd-unit-`; references to
 `ifdd-instances-static` (the instance chapter of the meta repository)
 resolve only there.
 
@@ -101,6 +102,14 @@ headings per level in both languages, every label with the prefix, every
 reference to an own label resolvable, and a Sphinx build of each language
 with `-W` (configuration `tests/docs/conf.py`, versions
 `tests/docs/requirements.txt`).
+
+The check runs PlantUML, so it needs Java and Graphviz.
+`tests/docs/get_plantuml.sh` downloads the pinned PlantUML jar into the user
+cache, checks its SHA-256 and prints its path:
+
+```bash
+export IFDD_PLANTUML_JAR="$(tests/docs/get_plantuml.sh)"
+```
 
 ## CI
 
@@ -122,38 +131,8 @@ take an existing `dd4-unit` instance across. Generate a new instance, then:
 4. Stop the old container before starting the new one: both announce a
    router for the same host.
 
-## Honesty notes
+## AI assistance
 
-Documentation `docs/` (2026-10-13): rendered with cookiecutter 2.7.1 for
-both fixtures and with the `cookiecutter_all.yaml` of the meta repository;
-`tests/check_docs.py` passes for each (Sphinx 9.1.0, myst-parser 5.1.0,
-sphinxcontrib-mermaid 2.1.1, Python 3.13), the placeholder check finds
-nothing and the instance tests pass. The workflow file passes actionlint
-1.7.12; the workflow itself has not run. Content: taken from the previous
-instance README, this README and the configuration files; the memory limit
-and the cache lifetime are marked as not measured. Also checked
-(2026-10-13): one Sphinx project per language with the pages of all ten
-service templates (rendered with `cookiecutter_all.yaml`), the instance chapter of
-the meta repository and ifdd-be-core with its OpenAPI document builds with
-`-W` and no suppressed warnings, so every cross reference resolves; the
-Mermaid diagrams of all services, and of the option variants of the
-fixtures, render in headless Chromium 141.0.7390.37 (Playwright 1.56.0,
-Mermaid 11.12.1 served locally).
-
-See the instance README. In short: the nginx configuration was exercised
-with a real nginx binary and the compose files were validated with
-`docker compose config`; the image tag and the running read-only container
-were not (no Docker daemon at build time) and are covered by the CI smoke
-test.
-
-Vocabularies (2026-10-12): examples for four units (V, kV, A, kA) and two quantity kinds (voltage, electric current). The fallback of term IRIs
-to the vocabulary of their namespace was run with nginx 1.24.0 (Ubuntu), not
-the 1.30.5 of the image: namespace IRI, term IRI and the file itself answer
-200 with `application/ld+json` and the CORS header, an unknown namespace and
-a path below a term answer 404, a preflight on a term IRI 204;
-`tests/test_config.py` does the same against a real nginx when one is
-installed (skipped in CI, which has none). The new configuration test fails
-against the previous template; the vocabulary tests are skipped there (no
-vocabularies). Not checked: the smoke test with Docker (new vocabulary
-probes), the image, and the `skos:exactMatch` IRIs against QUDT (qudt.org
-could not be reached from the sandbox).
+Some parts of this repository, in particular the tests, the test data and the
+documentation, were developed or improved with the help of large language
+models (LLMs). All changes were reviewed and released by the maintainer.
