@@ -46,12 +46,19 @@ Die Beispiele nutzen nur Standard-Vokabulare: `rdfs:label` und
 
 ## Architektur
 
-```{mermaid}
-flowchart LR
-  Clients[Browser, Dienste] -->|HTTPS| Proxy[proxy: Traefik]
-  Proxy -->|"{{ cookiecutter.ifdd_unit_host }}, Port 8080"| Nginx[unit: nginx]
-  Nginx -->|nur lesend| Content[(Inhalts-Klon)]
-  Repo[Inhalts-Repository] -->|git pull| Content
+```{uml}
+@startuml
+left to right direction
+  rectangle "Browser, Dienste" as Clients
+  rectangle "proxy: Traefik" as Proxy
+  Clients --> Proxy : HTTPS
+  rectangle "unit: nginx" as Nginx
+  Proxy --> Nginx : {{ cookiecutter.ifdd_unit_host }}, Port 8080
+  database "Inhalts-Klon" as Content
+  Nginx --> Content : nur lesend
+  rectangle "Inhalts-Repository" as Repo
+  Repo --> Content : git pull
+@enduml
 ```
 
 | Wer | Nutzt diesen Dienst für |
